@@ -69,22 +69,27 @@ describe("myRange(min, max, step)", () => {
   });
   context("if step is provided", () => {
     it("should return the correct array", () => {
-      //Arrange
-
+      const minInput = 1;
+      const maxInput = 5;
+      const stepInput = 2;
       //Act
-
+      const test = myRange(minInput, maxInput, stepInput);
+      const result = [1, 3, 5]
       // Assert
-      expect.fail('Remove this expect.fail and replace it with your test');
+      expect(test).to.eql(result)
 
     });
   });
   it("should throw an error if num is not type of Number", () => {
-    //Arrange
+      const minInput = 'hi';
+      const maxInput = 5;
+      const stepInput = 2;
+      //Act
+      const test = () => myRange(minInput, maxInput, stepInput);
+      // const result = [1, 3, 5]
+      // Assert
+      expect(test).to.throw(TypeError);
 
-    //Act
-
-    //Assert
-    expect.fail('Remove this expect.fail and replace it with your test');
 
   });
 });
