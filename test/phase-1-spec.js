@@ -1,4 +1,5 @@
 const chai = require("chai");
+const { deeppink } = require("color-name");
 const expect = chai.expect;
 const { isFive, isOdd, myRange, fizzBuzz} = require("../problems/phase-1");
 describe("isFive(num)", () => {
@@ -96,29 +97,45 @@ describe("myRange(min, max, step)", () => {
 describe('fizzBuzz(max)', ()=> {
   it('should throw a RangeError if max < 0', ()=> {
     //Arrange
-
+    const max = -1
     //Act
-
+    const test = () => fizzBuzz(max);
     //Assert
-    expect.fail('Remove this expect.fail and replace it with your test');
+    expect(test).to.throw(Error);
 
   })
   it('should throw a TypeError if max is not a number', ()=> {
     //Arrange
-
+    const maxInput = 'string';
     //Act
-
+    const test = () => fizzBuzz(maxInput);
     //Assert
-    expect.fail('Remove this expect.fail and replace it with your test');
+    expect(test).to.throw(TypeError);
 
   })
   it('should return an array from 0 to max (not inclusive) of numbers that are divisible by either 3 or 5 but not both', ()=> {
     //Arrange
-
+    const setMax = 15;
     //Act
-
+    const test = fizzBuzz(setMax);
+    const result = [3, 5, 6, 9, 10, 12];
     //Assert
-    expect.fail('Remove this expect.fail and replace it with your test');
+    expect(test).to.eql(result);
 
   })
 })
+
+// equal
+  // check if the two values point to the same place in memory
+
+// eql
+// deep.equal
+  // check if the two values have the same value
+
+// example
+  // let input1 = [1, 2, 3];
+  // let input2 = [1, 2, 3];
+  // let input3 = input2;
+
+  // expect(input1).to.equal(input2); // FAIL
+  // expect(input2).to.equal(input3); // OK

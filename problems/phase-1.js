@@ -24,10 +24,10 @@ function isOdd(number) {
 
 function myRange(min, max, step=1) {
   const array = []
-  if (typeof min !== 'number' || typeof max !== 'number') {
-      throw new TypeError;
+  if (typeof min !== 'number' || typeof max !== 'number' || typeof step !== 'number'){
+    throw TypeError('needs to be a number')
   }
-  for (let i = min; i <= max; i+= step) {
+  for (let i = min; i <= max; i+=step) {
     array.push(i);
   }
   return array
@@ -47,9 +47,9 @@ function fizzBuzz(max) {
 
   const array = []
   for (let i = 0; i < max; i += 1) {
-    if (i % 3 === 0 || i % 5 !== 0) {
+    if (i % 3 === 0 && i % 5 !== 0) {
       array.push(i);
-    } else if (i % 5 === 0 || i % 3 !== 0) {
+    } else if (i % 5 === 0 && i % 3 !== 0) {
       array.push(i);
     }
   }
