@@ -41,22 +41,29 @@ describe("isOdd(number)", () => {
   it("should throw an error if num is not type of Number", () => {
     //Arrange
     const input = 'string'
+    const input2 = []
+    const input3 = {}
     //Act
-    const test = isOdd(input)
-
+    const test = () => isOdd(input)
+    const test2 = () => isOdd(input2)
+    const test3 = () => isOdd(input3)
     //Assert
     expect(test).to.throw(Error)
+    expect(test2).to.throw(Error)
+    expect(test3).to.throw(Error)
   });
 });
 describe("myRange(min, max, step)", () => {
   context("if step is not provided", () => {
     it("should return the correct array with default value step=1", () => {
       //Arrange
-
+      const minInput = 1;
+      const maxInput = 5;
       //Act
-
+      const test = myRange(minInput, maxInput);
+      const result = [1, 2, 3, 4, 5]
       // Assert
-      expect.fail('Remove this expect.fail and replace it with your test');
+      expect(test).to.eql(result)
 
     });
   });
