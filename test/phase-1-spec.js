@@ -24,27 +24,28 @@ describe("isOdd(number)", () => {
     const test = isOdd(5);
     const result = true;
     //Assert
-    expect(test).to.eql(result);
+    expect(test).to.equal(result);
 
 
   });
   it("should return false if the num is even", () => {
+    const test = isOdd(4);
+    const result = false;
+    expect(test).to.equal(result);
     //Arrange
-
     //Act
-
     //Assert
-    expect.fail('Remove this expect.fail and replace it with your test');
+
 
   });
   it("should throw an error if num is not type of Number", () => {
     //Arrange
-
+    const input = 'string'
     //Act
+    const test = isOdd(input)
 
     //Assert
-    expect.fail('Remove this expect.fail and replace it with your test');
-
+    expect(test).to.throw(Error)
   });
 });
 describe("myRange(min, max, step)", () => {
